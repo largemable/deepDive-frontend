@@ -19,7 +19,10 @@ function App() {
     <div>
         {/* <Nav/> */}
         {/* <Route path="/" exact component={ <Albums /> }/> */}
-      <Albums />
+
+      {/* Displays all albums  */}
+      <Albums />  
+
     </div>
   );
 }
