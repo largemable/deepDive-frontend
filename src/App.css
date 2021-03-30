@@ -1,73 +1,83 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    background: black;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-    font-size: 16px;
-    height: 100%;
-    max-height: 100vh;
-    overflow-x: hidden;
+html,
+body {
+	background: black;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 200;
+	font-size: 16px;
+	height: 100%;
+	max-height: 100vh;
+	overflow-x: hidden;
 }
 
 .card-image-container {
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    height: auto;
-    max-height: 200px;
-    width:100%;
-    
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	max-height: 200px;
+	width: 100%;
 }
 
 .card-image {
-    height: 180px;
-    max-height: 180px;
-    width:100%;
-    object-fit: cover;
+	height: 180px;
+	max-height: 180px;
+	width: 100%;
+	object-fit: cover;
 }
 
 .card-details {
-    font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .card:hover {
-    border: white 1px solid;
-    cursor: pointer;
-    opacity: 1;
+	border: white 1px solid;
+	cursor: pointer;
+	opacity: 1;
 }
 
 .card:active {
-    background: cyan;
-    cursor: grabbing;
+	background: cyan;
+	cursor: grabbing;
 }
 
 .albums-wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .albums-container {
-    width:80%;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	width: 80%;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 a {
-    font-size: 1rem;
-    text-decoration: none;
-    color: white;
-    opacity: 0.9;
-    transform: opacity 0.15s;
+	font-size: 1rem;
+	text-decoration: none;
+	color: white;
+	opacity: 0.9;
+	transform: opacity 0.15s;
 }
 
 a:hover {
-    opacity: 1;
+	opacity: 1;
 }
 
 .review {
-    border: cyan 1px solid;
+	border: cyan 1px solid;
+}
+
+.nav-bar {
+	background: black;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20 20 20 20px;
+	text-decoration: none;
 }
