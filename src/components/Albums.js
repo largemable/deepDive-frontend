@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import APIurl from '../config'
-import axios from 'axios'
+import '../App.css';
+import Card from './Card'
 
+
+// Shows all albums in a browse/gallery type fashion
 const Albums = () => {
 
     const [albums, setAlbums] = useState([])
@@ -11,7 +14,6 @@ const Albums = () => {
     //     .get(`${APIurl}/albums`)
     //     .then((res) => setAlbums(res.data))
     //     .catch(console.error);
-
     // }, [])
 
     useEffect(() => {
@@ -22,16 +24,12 @@ const Albums = () => {
     }, [])
 
     return (
-        <div>
-            {albums.map(album => 
-            <div>
-                <h1>{album.title}</h1>
-                <h2>{album.artist}</h2>
-                <h3>{album.genre}</h3>
-                <h3>{album.year}</h3>
-            </div>
-            )}
-
+        <div className='albums-wrapper'>
+			<div className='albums-container'>
+				{albums.map((album) => {
+					return <Card album={album} key={album._id} />;
+				})}
+			</div>
         </div>
     );
 };
