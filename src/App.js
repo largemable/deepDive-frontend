@@ -2,7 +2,7 @@
 import { Route } from 'react-router-dom';
 import './App.css';
 import Albums from './components/Albums';
-import Form from './components/CreatePost';
+import PostAlbum from './components/PostAlbum';
 // import Nav from './components/Nav'
 // import APIurl from './config'
 // import axios from 'axios'
@@ -22,7 +22,7 @@ function App() {
 
 			{/* Displays all albums  */}
 			<Albums />
-			<Form form={Form} />
+			<PostAlbum postAlbum={PostAlbum} />
 		</div>
 	);
 }
