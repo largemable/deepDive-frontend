@@ -3,11 +3,12 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
-const PostReview = () => {
+const PostReview = ({ match }) => {
 	const initialState = {
+		albumId: match.params.id,
 		title: '',
 		body: '',
-		reviewer: ''
+		// reviewer: '',
 	};
 
 	const history = useHistory();
@@ -44,13 +45,13 @@ const PostReview = () => {
 					value={review.body}
 					placeholder='Body'
 				/>
-				<label htmlFor='reviewer'>Reviewer: </label>
+				{/* <label htmlFor='reviewer'>Reviewer: </label>
 				<input
 					onChange={handleChange}
 					name='reviewer'
 					value={review.reviewer}
 					placeholder='Reviewer'
-				/>
+				/> */}
 				<button id='button' type='submit'>
 					Submit
 				</button>
