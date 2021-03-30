@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
-const PostReview = ({ match }) => {
+const PostReview = ({ match, setAlbum }) => {
 	const initialState = {
 		albumId: match.params.id,
 		title: '',
@@ -22,8 +22,12 @@ const PostReview = ({ match }) => {
 		event.preventDefault();
 		axios
 			.post(`${APIurl}/reviews`, review)
+			.then((res) => {
+				// console.log(res);
+				setAlbum(res.data.album);
+			})
 			.then(() => {
-				history.push('/');
+				history.push(`/albums/${match.params.id}`);
 			})
 			.catch(console.error);
 	};
