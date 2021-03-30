@@ -4,8 +4,8 @@ import '../App.css';
 export default function Review( { review } ) {
     return (
         <div className='review'>
-            <h1>{`Review by ${review.reviewer}`}</h1>
-            
+            <h1>{`Review Title: ${review.title}`}</h1>
+            <p>{`${review.body}`}</p>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
-const Form = () => {
+const PostAlbum = () => {
 	const initialState = {
 		title: '',
 		artist: '',
@@ -77,4 +77,4 @@ const Form = () => {
 	);
 };
 
-export default Form;
+export default PostAlbum;

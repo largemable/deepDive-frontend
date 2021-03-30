@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import APIurl from '../config'
 import Reviews from './Reviews'
+import { Router, Route, Switch } from 'react-router-dom';
+import PostReview from './PostReview'
 
 // Show route for each individual asset
 export default function AlbumDetails( { match } ) {
@@ -34,8 +36,10 @@ export default function AlbumDetails( { match } ) {
                     <h3>{album.genre}</h3>
                     <h3>{album.year}</h3>
 
-                <div className='reviews-container'>
+                <div>
                     <Reviews album={album}/>
+                    {/* <Route exact path='/albums/:id' render={(routerProps) => <Reviews album={album} match={routerProps.match}/> } /> */}
+                    <Route exact path='/albums/:id' render={(routerProps) => <PostReview album={album} match={routerProps.match}/> } />
                 </div>  
 			</div>
 	);

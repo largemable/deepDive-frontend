@@ -67,3 +67,7 @@ a {
 a:hover {
     opacity: 1;
 }
+
+.review {
+    border: cyan 1px solid;
+}
