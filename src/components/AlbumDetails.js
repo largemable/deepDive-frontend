@@ -16,7 +16,7 @@ export default function AlbumDetails({ match }) {
 			.then((res) => res.json())
 			.then((res) => setAlbum(res))
 			.catch(console.error);
-	}, []);
+	}, [album.reviews]);
 
 	// If data is not yet loaded, show loading component
 	if (!album) {
