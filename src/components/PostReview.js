@@ -49,12 +49,12 @@ const PostReview = ({ match, setAlbum }) => {
 					value={review.body}
 					placeholder='Body'
 				/>
-				{/* <label htmlFor='reviewer'>Reviewer: </label>
+				{/* <label htmlFor='activeUser'>User: </label>
 				<input
 					onChange={handleChange}
-					name='reviewer'
-					value={review.reviewer}
-					placeholder='Reviewer'
+					name='activeUser'
+					value={review.activeUser}
+					placeholder='User'
 				/> */}
 				<button id='button' type='submit'>
 					Submit

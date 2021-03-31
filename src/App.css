@@ -13,6 +13,75 @@ body {
 	max-height: 100vh;
 	overflow-x: hidden;
 }
+  
+  ul {
+	padding: 0;
+  }
+  
+  input, button {
+	display:block;
+	margin: 1rem;
+	padding: 0.5rem 1rem;
+  }
+  
+  button {
+	border: chartreuse 4px solid;
+	font-weight: bold;
+  }
+  
+  .center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 85vh;
+	width: 100%;
+  }
+  
+  .flex-center {
+	justify-content: center;
+  }
+  
+  .flex-row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: auto;
+  }
+  
+  a {
+	font-size: 1rem;
+	text-decoration: none;
+	color: white;
+	opacity: 0.9;
+	transform: opacity 0.15s;
+  }
+  
+  a:hover {
+	opacity: 1;
+  }
+  
+  /* .navbar-container {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px white solid;
+  }
+  .navbar-container li {
+	display: inline;
+  } */
+
+
+
+
+
+
+
+
 
 .card-image-container {
 	display: flex;
