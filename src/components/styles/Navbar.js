@@ -1,15 +1,17 @@
 import React from 'react';
-import styled from 'styled-components'
-import { NavbarContainer, Nav } from './Navbar.elements';
+import styled from 'styled-components';
+import { NavbarContainer, Nav, NavLogo, NavIcon } from './Navbar.elements';
 
 const Navbar = () => {
 	return (
 		<>
 			<Nav>
-				Test
+				<NavIcon /> Music Review
+					<NavLogo to='/'>
 				<NavbarContainer>
-
-                </NavbarContainer>
+						Review App
+				</NavbarContainer>
+					</NavLogo>
 			</Nav>
 		</>
 	);
