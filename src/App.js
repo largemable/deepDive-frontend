@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import './App.css';
+// import './App.css';
+import styled from 'styled-components'
 import Albums from './components/Albums';
 import AlbumDetails from './components/AlbumDetails';
 import Home from './components/Home';
@@ -9,6 +10,8 @@ import About from './components/About';
 import Users from './components/Users';
 import PostAlbum from './components/PostAlbum';
 import PostReview from './components/PostReview';
+import GlobalStyle from './GlobalStyle'
+import Navbar from './components/styles/Navbar'
 
 function App() {
 
