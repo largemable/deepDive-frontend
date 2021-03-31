@@ -1,7 +1,6 @@
 // Clickable link that represents an album in the Albums component 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 export default function Card( { album } ) {
 	// Display component that represents the album while in Browse/Albums view
 

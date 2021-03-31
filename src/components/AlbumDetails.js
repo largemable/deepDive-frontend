@@ -1,5 +1,4 @@
 // Main show route
-import '../App.css';
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import APIurl from '../config';

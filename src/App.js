@@ -11,7 +11,7 @@ import Users from './components/Users';
 import PostAlbum from './components/PostAlbum';
 import PostReview from './components/PostReview';
 import GlobalStyle from './GlobalStyle'
-import Navbar from './components/styles/Navbar'
+
 
 function App() {
 

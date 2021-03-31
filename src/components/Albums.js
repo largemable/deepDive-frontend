@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import APIurl from '../config'
-import '../App.css';
 import Card from './Card'
 
 

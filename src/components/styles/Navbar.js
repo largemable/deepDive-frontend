@@ -6,8 +6,9 @@ const Navbar = () => {
 	return (
 		<>
 			<Nav>
+				Test
 				<NavbarContainer>
-                    yyyyy
+
                 </NavbarContainer>
 			</Nav>
 		</>
