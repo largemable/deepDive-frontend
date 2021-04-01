@@ -1,11 +1,12 @@
 import React from 'react'
-import Login from './Login';
+import { Link } from 'react-router-dom';
 
-export default function Home( { users, activeUser, setActiveUser } ) {
+export default function Home() {
     return (
-        <div>
-            <h1>Login</h1>
-            <Login users={users} activeUser={activeUser} setActiveUser={setActiveUser} />
+        <div className='center'>
+            <h1>Music Blog and Rating App</h1>
+            <p>Post, review, and rate your favorite albums!</p>
+            <Link className='ghost-button' to='/albums'>Get Started</Link>
         </div>
     )
 }

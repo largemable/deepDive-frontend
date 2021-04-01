@@ -3,7 +3,7 @@ import '../App.css';
 import APIurl from '../config';
 import axios from 'axios';
 
-export default function Review({ review, id }) {
+export default function Review({ review, id, album, setAlbum }) {
 	const initialState = {
 		albumId: id,
 		title: review.title,
@@ -25,22 +25,26 @@ export default function Review({ review, id }) {
 		setNewReview({ ...newReview, [event.target.name]: event.target.value });
 	};
 	const handleDelete = () => {
-		// Write your DELETE fetch() or axios() request here
-
 		axios
 			.delete(`${APIurl}/reviews/${id}`, review)
 			.then(() => {
-				// history.push('/');
+				//  manually filter out the review bc back end isnt configured to send us back data
+				const filteredReviews = album.reviews.filter((review) => review._id != id);  
+				setAlbum({...album, reviews: filteredReviews})
 			})
 			.catch(console.error);
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// Write your PUT fetch() or axios() request here
-
 		axios
 			.patch(`${APIurl}/reviews/${id}`, newReview)
-			.then(() => {})
+			.then(() => {
+				const filteredReviews = album.reviews.filter((review) => review._id != id); 
+				newReview._id = id;
+				filteredReviews.push(newReview);
+				setAlbum({...album, reviews: filteredReviews});
+				closeModal();
+			})
 			.catch(console.error);
 	};
 

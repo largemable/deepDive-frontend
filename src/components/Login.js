@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
-const Login = ( { users, activeUser, setActiveUser } ) => {
+const Login = () => {
     
     const initialState = {
         name: '',
         password: ''
     }
-
+	const history = useHistory();
     const [loginData, setLoginData] = useState(initialState);
+	const [loginError, setLoginError]  = useState(false);
 
 	const handleChange = (event) => {
 		 setLoginData({ ...loginData, [event.target.name]: event.target.value });
@@ -18,28 +19,32 @@ const Login = ( { users, activeUser, setActiveUser } ) => {
 
 	const handleSubmit = (event) => {
         event.preventDefault();
-        checkLoginData();
-
+		axios
+		.post(`${APIurl}/users/signin`, loginData)
+		.then(({ data }) => {
+			localStorage.setItem('token', data.token);
+			localStorage.setItem('expiration', Date.now() + 360000);   
+			history.push('/');
+		})
+		.catch(() => setLoginError(true));
 	};
 
-    function checkLoginData() {
-        users.forEach((user) => {
-            if (user.name == loginData.name) {
-                if (user.password == loginData.password) {
-                    console.log('Login successful.');
-                    return setActiveUser(user);
-                }
-            }
-        })
-        return loginFailed();
-    }
+	// useEffect(() => {
+	// 	checkForSessionExpired();
+	// }, [])
 
-    function loginFailed() {
-        console.log('Username or password not found!');
-    }
+	// any time we make a request using a token,
+	// compare Date.now() to localStorage.get('expiration')
+	// function checkForSessionExpired() {
+	// 	if (Date.now() > localStorage.getItem('expiration')) {
+	// 		console.log('session expired');
+	// 		history.push('/signin');
+	// 	}
+	// }
 
 	return (
-		<div>
+		<div className='center'>
+			<h1>Sign In</h1>
 			<form onSubmit={handleSubmit} className='login-form'>
 				<input
 					onChange={handleChange}
@@ -54,11 +59,13 @@ const Login = ( { users, activeUser, setActiveUser } ) => {
 					value={loginData.password}
 					placeholder='password'
 				/>
-				<button className='button' id='button' type='submit'>
-					Login
+				<button className='' id='button' type='submit'>
+					Sign In
 				</button>
 			</form>
-            <h2>{`Active User: ${activeUser?.name}`}</h2>
+			{loginError && <p>Username or password not found</p>}
+			<p>No account yet?</p><Link to={'/users'}>Sign Up</Link>
+
 
 		</div>
 	);

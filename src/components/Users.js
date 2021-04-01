@@ -20,8 +20,8 @@ function Users ( { users, setUsers } ) {
     }
 
     return (
-        <div className='users-container'>
-             <h1>Add User</h1>
+        <div className='center'>
+             <h1>Sign Up</h1>
             <AddUser />
             <h2>All Users</h2>
             {users.map((user) => {

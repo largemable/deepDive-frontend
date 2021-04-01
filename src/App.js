@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Users from './components/Users';
 import PostAlbum from './components/PostAlbum';
-import PostReview from './components/PostReview';
+import Login from './components/Login';
 
 function App() {
 
@@ -23,12 +23,13 @@ function App() {
 			</nav>
 			<main>
 				<Switch>
-					<Route exact path='/' render={() => <Home users={users} activeUser={activeUser} setActiveUser={setActiveUser}/> } />
+					<Route exact path='/' render={() => <Home /> } />
+
+					<Route exact path='/signin' render={() => <Login users={users} activeUser={activeUser} setActiveUser={setActiveUser}/> } />
 
 					<Route exact path='/users' render={() => <Users users={users} setUsers={setUsers} activeUser={activeUser} setActiveUser={setActiveUser}/> } />
 					
 					<Route exact path='/about' component={About} />
-					{/* <Route exact path='/' component={Home} /> */}
 					<Route exact path='/albums' component={() => <Albums />} />
 					<Route
 						exact
@@ -36,9 +37,7 @@ function App() {
 						render={(routerProps) => <AlbumDetails match={routerProps.match} />}
 					/>
 
-					
-					{/* <Route exact path='/albums/create' render={() => <PostAlbum /> } /> */}
-					{/* <PostAlbum /> */}
+					<Route exact path='/post' render={() => <PostAlbum /> } />
 				</Switch>
 			</main>
 		</div>
