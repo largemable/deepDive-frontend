@@ -10,6 +10,7 @@ const AddUser = () => {
 
 	const history = useHistory();
 	const [newUser, setNewUser] = useState(initialState);
+	const [signUpError, setSignUpError]  = useState(false);
 
 	const handleChange = (event) => {
 		setNewUser({ ...newUser, [event.target.name]: event.target.value });
@@ -18,11 +19,11 @@ const AddUser = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		axios
-			.post(`${APIurl}/users`, newUser)
+			.post(`${APIurl}/users/signup`, newUser)
             .then(() => {
-                history.push(`/users`);
+                history.push(`/signin`);
             })
-			.catch(console.error);
+			.catch(() => setSignUpError(true));
 	};
 
 	return (
@@ -45,6 +46,7 @@ const AddUser = () => {
 					Add User
 				</button>
 			</form>
+			{signUpError && <p style="color:red ">Username already exists</p>}
 
 		</div>
 	);

@@ -11,6 +11,7 @@ export default function Reviews({ album, setAlbum }) {
 				{album.reviews.map((review) => {
 					return (
 						<Review
+							album={album}
 							review={review}
 							key={review._id}
 							id={review._id}
