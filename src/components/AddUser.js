@@ -5,12 +5,12 @@ import APIurl from '../config';
 
 const AddUser = () => {
 	const initialState = {
-		name: ''
+		name: '',
 	};
 
 	const history = useHistory();
 	const [newUser, setNewUser] = useState(initialState);
-	const [signUpError, setSignUpError]  = useState(false);
+	const [signUpError, setSignUpError] = useState(false);
 
 	const handleChange = (event) => {
 		setNewUser({ ...newUser, [event.target.name]: event.target.value });
@@ -20,9 +20,9 @@ const AddUser = () => {
 		event.preventDefault();
 		axios
 			.post(`${APIurl}/users/signup`, newUser)
-            .then(() => {
-                history.push(`/signin`);
-            })
+			.then(() => {
+				history.push(`/signin`);
+			})
 			.catch(() => setSignUpError(true));
 	};
 
@@ -37,7 +37,7 @@ const AddUser = () => {
 				/>
 				<input
 					onChange={handleChange}
-                    type='password'
+					type='password'
 					name='password'
 					value={newUser.password}
 					placeholder='password'
@@ -46,8 +46,7 @@ const AddUser = () => {
 					Add User
 				</button>
 			</form>
-			{signUpError && <p style="color:red ">Username already exists</p>}
-
+			{signUpError && <p>Username already exists</p>}
 		</div>
 	);
 };
