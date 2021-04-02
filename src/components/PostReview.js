@@ -11,7 +11,6 @@ const PostReview = ({ match, setAlbum }) => {
 		// reviewer: '',
 	};
 
-	const history = useHistory();
 	const [review, setReview] = useState(initialState);
 
 	const handleChange = (event) => {
@@ -20,20 +19,23 @@ const PostReview = ({ match, setAlbum }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		axios
-			.post(`${APIurl}/reviews`, review)
-			.then((res) => {
-				// console.log(res);
-				setAlbum(res.data.album);
-			})
-			.then(() => {
-				history.push(`/albums/${match.params.id}`);
+		axios({
+			url: `${APIurl}/reviews`,
+			method: 'POST',
+			headers: {
+			  'Authorization': `Bearer ${localStorage.getItem('token')}`
+			},
+			data: review
+		  })
+			.then(({ data }) => {
+				setAlbum(data.album);
 			})
 			.catch(console.error);
 	};
 
 	return (
 		<div>
+			<h2>Review this album</h2>
 			<form onSubmit={handleSubmit} className='create-form'>
 				<label htmlFor='title'>Title: </label>
 				<input
@@ -49,13 +51,6 @@ const PostReview = ({ match, setAlbum }) => {
 					value={review.body}
 					placeholder='Body'
 				/>
-				{/* <label htmlFor='activeUser'>User: </label>
-				<input
-					onChange={handleChange}
-					name='activeUser'
-					value={review.activeUser}
-					placeholder='User'
-				/> */}
 				<button id='button' type='submit'>
 					Submit
 				</button>

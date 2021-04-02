@@ -2,18 +2,9 @@ import React, { useState, useEffect } from 'react';
 import APIurl from '../config'
 import Card from './Card'
 
-
-// Shows all albums in a browse/gallery type fashion
 const Albums = () => {
 
     const [albums, setAlbums] = useState([])
-
-    // useEffect(() => {
-    //     axios
-    //     .get(`${APIurl}/albums`)
-    //     .then((res) => setAlbums(res.data))
-    //     .catch(console.error);
-    // }, [])
 
     useEffect(() => {
         fetch(`${APIurl}/albums`)

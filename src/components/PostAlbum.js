@@ -16,15 +16,19 @@ const PostAlbum = () => {
 	const [album, setAlbum] = useState(initialState);
 
 	const handleChange = (event) => {
-		// event.preventDefault();
 		setAlbum({ ...album, [event.target.name]: event.target.value });
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// Write your POST fetch() or axios() request here
-		axios
-			.post(`${APIurl}/albums`, album)
+		axios({
+			url: `${APIurl}/albums`,
+			method: 'POST',
+			headers: {
+			  'Authorization': `Bearer ${localStorage.getItem('token')}`
+			},
+			data: album
+		  })
 			.then(() => {
 				history.push('/');
 			})
@@ -32,7 +36,8 @@ const PostAlbum = () => {
 	};
 
 	return (
-		<div>
+		<div className='center'>
+			<h1>Post New Album</h1>
 			<form onSubmit={handleSubmit} className='create-form'>
 				<label htmlFor='title'>Album Title: </label>
 				<input

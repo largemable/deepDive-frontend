@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Users from './components/Users';
 import PostAlbum from './components/PostAlbum';
-import PostReview from './components/PostReview';
+import Login from './components/Login';
 
 //Styles
 import { IconContext } from 'react-icons/lib';
@@ -60,7 +60,6 @@ function App() {
 					/>
 
 					<Route exact path='/about' component={About} />
-					{/* <Route exact path='/' component={Home} /> */}
 					<Route exact path='/albums' component={() => <Albums />} />
 					<Route
 						exact
