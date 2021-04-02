@@ -8,7 +8,7 @@ import {
 	TiUser,
 	TiUserOutline,
 } from 'react-icons/ti';
-import { FaPlusSquare, FaSearch} from 'react-icons/fa'
+import { FaPlusSquare, FaSearch } from 'react-icons/fa';
 
 import {
 	NavbarContainer,
@@ -26,7 +26,6 @@ const Navbar = () => {
 	const [click, setClick] = useState(false);
 	const handleClick = () => {
 		setClick(!click);
-
 	};
 	return (
 		<>
@@ -52,20 +51,24 @@ const Navbar = () => {
 							</NavLink>
 						</NavItems>
 						<NavItems>
-							<NavLink to='/albums'>Explore  <FaSearch/></NavLink>
+							<NavLink to='/albums'>
+								Explore <FaSearch />
+							</NavLink>
 						</NavItems>
 						<NavItems>
-							<NavLink to='/albums'>Post an album!<FaPlusSquare/></NavLink>
+							<NavLink to='/albums'>
+								Post an album!
+								<FaPlusSquare />
+							</NavLink>
 						</NavItems>
 
 						<NavItems>
-							<NavLink to='/users' onClick={handleClick} click={click}>
-								Users{click ? <TiUser/> : <TiUserOutline/>}
+							<NavLink to='/signin' onClick={handleClick} click={click}>
+								Sign In{click ? <TiUser /> : <TiUserOutline />}
 							</NavLink>
 						</NavItems>
 					</NavMenu>
 				</Nav>
-				
 			</IconContext.Provider>
 		</>
 	);

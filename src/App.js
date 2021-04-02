@@ -12,17 +12,14 @@ import Login from './components/Login';
 
 //Styles
 import { IconContext } from 'react-icons/lib';
-import { TiMail } from "react-icons/ti";
+import { TiMail } from 'react-icons/ti';
 import { SiGithub } from 'react-icons/si';
 import GlobalStyle from './GlobalStyle';
-import {StyledFooter, StyledFooterUl, StyledFooterLi} from './components/styles/Navbar.elements';
-
-
-
-
-
-
-
+import {
+	StyledFooter,
+	StyledFooterUl,
+	StyledFooterLi,
+} from './components/styles/Navbar.elements';
 
 function App() {
 	const [users, setUsers] = useState([]);
@@ -34,18 +31,18 @@ function App() {
 			<Nav />
 			<main style={{ marginBottom: '-80px', minHeight: '100%' }}>
 				<Switch>
+					<Route exact path='/' render={() => <Home />} />
 					<Route
 						exact
-						path='/'
+						path='/signin'
 						render={() => (
-							<Home
+							<Login
 								users={users}
 								activeUser={activeUser}
 								setActiveUser={setActiveUser}
 							/>
 						)}
 					/>
-
 					<Route
 						exact
 						path='/users'
@@ -58,7 +55,6 @@ function App() {
 							/>
 						)}
 					/>
-
 					<Route exact path='/about' component={About} />
 					<Route exact path='/albums' component={() => <Albums />} />
 					<Route
@@ -66,9 +62,7 @@ function App() {
 						path='/albums/:id'
 						render={(routerProps) => <AlbumDetails match={routerProps.match} />}
 					/>
-
-					{/* <Route exact path='/albums/create' render={() => <PostAlbum /> } /> */}
-					{/* <PostAlbum /> */}
+					<Route exact path='/post' render={() => <PostAlbum />} />
 				</Switch>
 			</main>
 			<footer>
@@ -76,7 +70,7 @@ function App() {
 					<p> Developers : </p>
 					<StyledFooterUl>
 						<StyledFooterLi>
-							 Mable{' '}
+							Mable{' '}
 							<a href='mailto:mable.palombogmail.com'>
 								<TiMail />
 							</a>
