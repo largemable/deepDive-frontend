@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Container from '../../GlobalStyle';
 import { ImHeadphones } from 'react-icons/im';
-import { Mirage} from '../../bckgroundImg/Mirage.jpg'
-
+import Grey from '../../bckgroundImg/Grade-Grey.jpg';
 
 export const Nav = styled.nav`
-	background: black;
+	background-image: url(${Grey});
 	color: white;
 	height: 80px;
 	display: flex;
@@ -19,6 +18,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavbarContainer = styled(Container)`
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	height: 80px;
@@ -45,6 +45,7 @@ export const NavIcon = styled(ImHeadphones)`
 
 export const NavBarMenu = styled.div`
 	display: none;
+	font-size: 3rem;
 
 	@media screen and (max-width: 960px) {
 		display: block;
@@ -124,17 +125,13 @@ export const StyledFooter = styled(Nav)`
 	top: auto;
 	width: 100%;
 	height: 80px;
-
-	
-
 `;
- export const StyledFooterUl = styled.ul`
+export const StyledFooterUl = styled.ul`
 	color: white;
 	text-decoration: none;
- `;
+`;
 
- export const StyledFooterLi = styled.li`
+export const StyledFooterLi = styled.li`
 	color: white;
 	display: inline-block;
-	
- `;
+`;

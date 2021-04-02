@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import {Container} from '../../GlobalStyle';
+// import Background from './bckgroundImg/Grade-Grey.jpg';
+
 
 export const Btn = styled.button`
 	border-radius: 5px;
@@ -11,6 +13,7 @@ export const Btn = styled.button`
 	outline: none;
 	border: none;
 	cursor: pointer;
+	padding: 2px;
 
 	&:hover {
 		transition: all 0.3s ease-out;
@@ -30,14 +33,26 @@ export const LogInBtn = styled(Btn)`
 	align-items: center;
 	padding: 8px 16px;
 	height: 100%;
-	width: 20%;
-	border: none;
+	width: 100%;
+	border-left: 5px;
 	outline: none;
 
 	${Btn}
 `;
 
-export const StyledFormWrapper = styled.section``;
+export const StyledFormSection = styled.section`
+	background: white;
+	border-radius: 4px;
+	height: 25%;
+	width: 100%;
+	padding: 5%;
+	margin-right: 10%;
+	margin-left: 10%;
+	
+
+
+
+`;
 
 export const StyledForm = styled.form``;
 

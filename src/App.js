@@ -74,11 +74,11 @@ function App() {
 			</main>
 			<footer>
 				<StyledFooter>
-					<p> Contributors:</p>
+					<p> Contributors : </p>
 					<StyledFooterUl>
 						<StyledFooterLi>
-							Mable{' '}
-							<a href='mailto:'>
+							 Mable{' '}
+							<a href='mailto:mable.palombogmail.com'>
 								<TiMail />
 							</a>
 							<a href='https://https://www.github.com/StephtheITSloth'>
@@ -87,7 +87,7 @@ function App() {
 						</StyledFooterLi>
 						<StyledFooterLi>
 							Ford{' '}
-							<a href='mailto:'>
+							<a href='mailto:fordpickert@gmail.com'>
 								<TiMail />
 							</a>
 							<a href='https://https://www.github.com/StephtheITSloth'>
@@ -96,7 +96,7 @@ function App() {
 						</StyledFooterLi>
 						<StyledFooterLi>
 							Jordan{' '}
-							<a href='mailto:'>
+							<a href='mailto:mrjordantanner@gmail.com'>
 								<TiMail />
 							</a>
 							<a href='https://https://www.github.com/StephtheITSloth'>

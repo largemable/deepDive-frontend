@@ -4,7 +4,7 @@ import axios from 'axios';
 import APIurl from '../config';
 import LoginComponent from './styles/LoginComponent'
 import { IoIosLogIn } from 'react-icons/io';
-import {LogInBtn} from './styles/Login.elements'
+import {LogInBtn, StyledFormSection} from './styles/Login.elements'
 
 
 
@@ -44,8 +44,8 @@ const Login = ( { users, activeUser, setActiveUser } ) => {
     }
 	
 	return (
-		<div>
-				<form onSubmit={handleSubmit} className='login-form'>
+			<>
+				<StyledFormSection onSubmit={handleSubmit} >
 					<input
 						onChange={handleChange}
 						name='name'
@@ -62,9 +62,9 @@ const Login = ( { users, activeUser, setActiveUser } ) => {
 					<LogInBtn className='button' id='button' type='submit'>
 						<IoIosLogIn />
 					</LogInBtn>
-				</form>
 				<h2>{`Active User: ${activeUser?.name}`}</h2>
-		</div>
+				</StyledFormSection>
+			</>
 	);
 };
 

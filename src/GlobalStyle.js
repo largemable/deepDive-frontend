@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import Background from './bckgroundImg/Grade-Grey.jpg';
+import Space from './bckgroundImg/Fresh-Turboscent.jpg';
 const GlobalStyle = createGlobalStyle`
 
 *{
@@ -12,9 +12,10 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
+	text-align: center;
 	height: 100%;
 	margin-left: 5px;
-	background-image: url(${Background})
+	background-image: url(${Space});
 }
 
 `;
