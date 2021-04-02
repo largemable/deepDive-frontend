@@ -65,6 +65,7 @@ const Navbar = () => {
 						</NavItems>
 					</NavMenu>
 				</Nav>
+				
 			</IconContext.Provider>
 		</>
 	);

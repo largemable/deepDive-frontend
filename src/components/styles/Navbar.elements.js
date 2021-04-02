@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Container from '../../GlobalStyle';
 import { ImHeadphones } from 'react-icons/im';
+import { Mirage} from '../../bckgroundImg/Mirage.jpg'
+
 
 export const Nav = styled.nav`
 	background: black;
@@ -78,6 +80,7 @@ export const NavMenu = styled.ul`
 
 export const NavItems = styled.li`
 	height: 80px;
+	color: white;
 	border-bottom: 2px solid transparent;
 
 	&:hover {
@@ -113,3 +116,25 @@ export const NavLink = styled(Link)`
 		}
 	}
 `;
+
+export const StyledFooter = styled(Nav)`
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	top: auto;
+	width: 100%;
+	height: 80px;
+
+	
+
+`;
+ export const StyledFooterUl = styled.ul`
+	color: white;
+	text-decoration: none;
+ `;
+
+ export const StyledFooterLi = styled.li`
+	color: white;
+	display: inline-block;
+	
+ `;
