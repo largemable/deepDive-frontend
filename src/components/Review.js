@@ -25,19 +25,33 @@ export default function Review({ review, id, album, setAlbum }) {
 		setNewReview({ ...newReview, [event.target.name]: event.target.value });
 	};
 	const handleDelete = () => {
-		axios
-			.delete(`${APIurl}/reviews/${id}`, review)
+		axios({
+			url: `${APIurl}/reviews/${id}`,
+			method: 'DELETE',
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('token')}`
+			},
+			data: newReview
+			})
 			.then(() => {
-				//  manually filter out the review bc back end isnt configured to send us back data
 				const filteredReviews = album.reviews.filter((review) => review._id != id);  
 				setAlbum({...album, reviews: filteredReviews})
 			})
 			.catch(console.error);
+
+
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		axios
-			.patch(`${APIurl}/reviews/${id}`, newReview)
+
+		axios({
+			url: `${APIurl}/reviews/${id}`,
+			method: 'PATCH',
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('token')}`
+			},
+			data: newReview
+			})
 			.then(() => {
 				const filteredReviews = album.reviews.filter((review) => review._id != id); 
 				newReview._id = id;
@@ -46,6 +60,7 @@ export default function Review({ review, id, album, setAlbum }) {
 				closeModal();
 			})
 			.catch(console.error);
+
 	};
 
 	return (
