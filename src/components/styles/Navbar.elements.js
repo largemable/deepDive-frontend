@@ -134,4 +134,5 @@ export const StyledFooterUl = styled.ul`
 export const StyledFooterLi = styled.li`
 	color: white;
 	display: inline-block;
+	padding: 10px;
 `;

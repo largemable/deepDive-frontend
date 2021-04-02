@@ -73,7 +73,7 @@ function App() {
 			</main>
 			<footer>
 				<StyledFooter>
-					<p> Contributors : </p>
+					<p> Developers : </p>
 					<StyledFooterUl>
 						<StyledFooterLi>
 							 Mable{' '}

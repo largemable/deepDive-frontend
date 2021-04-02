@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
+import { IconContext } from 'react-icons/lib';
+
 
 const PostAlbum = () => {
 	const initialState = {

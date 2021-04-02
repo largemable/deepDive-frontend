@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;700&display=swap');
+
 * {
 	box-sizing: border-box;
 }
@@ -25,7 +25,7 @@ body {
 	padding: 0.5rem 1rem;
   }
  h1 {
-	 color:cornflowerblue;
+	 color:rgb(70, 89, 124);
  }
   .center {
 	display: flex;
@@ -142,7 +142,9 @@ body {
     width:80%;
     height:100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: 
+	repeat(auto-fill, minmax(150px, 1fr));
+	align-items: center;
 }
 
 

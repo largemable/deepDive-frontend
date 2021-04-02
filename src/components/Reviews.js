@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import React from 'react'
-import Review from './Review'
-=======
 import React from 'react';
 import { Route } from 'react-router-dom';
 import '../App.css';
 import Review from './Review';
->>>>>>> main
 
 export default function Reviews({ album, setAlbum }) {
 	return (
