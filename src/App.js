@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import './App.css';
-import styled from 'styled-components';
 import Albums from './components/Albums';
 import AlbumDetails from './components/AlbumDetails';
 import Home from './components/Home';

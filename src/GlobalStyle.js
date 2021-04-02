@@ -1,5 +1,5 @@
-import styled, {createGlobalStyle} from 'styled-components';
-import NavBar from './components/styles/Navbar'
+import styled, { createGlobalStyle } from 'styled-components';
+import NavBar from './components/styles/Navbar';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -24,6 +24,28 @@ export const Container = styled.div`
 	@media screen and (max-width: 991px) {
 		padding-right: 30px;
 		padding-left: 30px;
+	}
+`;
+
+export const Button = styled.button`
+	border-radius: 5px;
+	background: ${({ primary }) => (primary ? '#3366ff' : '#ff3300')};
+	white-space: nowrap;
+	padding: ${({ big }) => (big ? '12px 64px' : '10px 20px')};
+	color: white;
+	font-size: ${({ fontbig }) => (fontbig ? '20px' : '16px')};
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		transition: all 0.3s ease-out;
+		background: white;
+		background: ${({ primary }) => (primary ? '#ff3300' : '#3366ff')};
+	}
+
+	@media screen and (max-width: 960px) {
+		width: 100%;
 	}
 `;
 
