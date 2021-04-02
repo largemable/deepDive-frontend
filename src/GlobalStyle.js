@@ -16,6 +16,7 @@ body {
 	height: 100%;
 	margin-left: 5px;
 	background-image: url(${Space});
+	background-size: 100%auto;
 }
 
 `;

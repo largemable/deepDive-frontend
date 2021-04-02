@@ -74,7 +74,7 @@ function App() {
 							<a href='mailto:mable.palombogmail.com'>
 								<TiMail />
 							</a>
-							<a href='https://github.com/largemable'>
+							<a href='https://www.github.com/largemable'>
 								<SiGithub />
 							</a>
 						</StyledFooterLi>
@@ -83,7 +83,7 @@ function App() {
 							<a href='mailto:fordpickert@gmail.com'>
 								<TiMail />
 							</a>
-							<a href='https://github.com/fordpic'>
+							<a href='https://www.github.com/fordpic'>
 								<SiGithub />
 							</a>
 						</StyledFooterLi>
@@ -92,7 +92,7 @@ function App() {
 							<a href='mailto:mrjordantanner@gmail.com'>
 								<TiMail />
 							</a>
-							<a href='https://github.com/mrjordantanner'>
+							<a href='https://www.github.com/mrjordantanner'>
 								<SiGithub />
 							</a>
 						</StyledFooterLi>
