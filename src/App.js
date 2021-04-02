@@ -9,6 +9,7 @@ import About from './components/About';
 import Users from './components/Users';
 import PostAlbum from './components/PostAlbum';
 import PostReview from './components/PostReview';
+import styled, { createGlobalStyle, css} from 'styled-components'
 import GlobalStyle from './GlobalStyle';
 
 function App() {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
-import LoginStyle from './styles/LoginStyle'
+import LoginComponent from './styles/LoginComponent'
 
 const Login = ( { users, activeUser, setActiveUser } ) => {
     
@@ -41,7 +41,7 @@ const Login = ( { users, activeUser, setActiveUser } ) => {
 	
 	return (
 		<div>
-
+			{/* <LoginComponent /> */}
 			
 		</div>
 	);
