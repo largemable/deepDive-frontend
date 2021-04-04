@@ -10,8 +10,15 @@ const PostReview = ({ match, setAlbum }) => {
 		body: '',
 		// reviewer: '',
 	};
-
+	const [modal, setModal] = useState(false);
 	const [review, setReview] = useState(initialState);
+
+	const postReview = () => {
+		setModal(true);
+	};
+	const closeModal = () => {
+		setModal(false);
+	};
 
 	const handleChange = (event) => {
 		setReview({ ...review, [event.target.name]: event.target.value });
@@ -23,38 +30,44 @@ const PostReview = ({ match, setAlbum }) => {
 			url: `${APIurl}/reviews`,
 			method: 'POST',
 			headers: {
-			  'Authorization': `Bearer ${localStorage.getItem('token')}`
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
 			},
-			data: review
-		  })
+			data: review,
+		})
 			.then(({ data }) => {
 				setAlbum(data.album);
+				closeModal();
 			})
 			.catch(console.error);
 	};
 
 	return (
 		<div>
-			<h2>Review this album</h2>
-			<form onSubmit={handleSubmit} className='create-form'>
-				<label htmlFor='title'>Title: </label>
-				<input
-					onChange={handleChange}
-					name='title'
-					value={review.title}
-					placeholder='Title'
-				/>
-				<label htmlFor='artist'>Body: </label>
-				<input
-					onChange={handleChange}
-					name='body'
-					value={review.body}
-					placeholder='Body'
-				/>
-				<button id='button' type='submit'>
-					Submit
-				</button>
-			</form>
+			<button onClick={postReview}>Review this album</button>
+			{/* <h2>Review this album</h2> */}
+
+			{modal ? (
+				<form onSubmit={handleSubmit} className='create-form'>
+					<label htmlFor='title'>Title: </label>
+					<input
+						onChange={handleChange}
+						name='title'
+						value={review.title}
+						placeholder='Title'
+					/>
+					<label htmlFor='artist'>Body: </label>
+					<input
+						onChange={handleChange}
+						name='body'
+						value={review.body}
+						placeholder='Body'
+					/>
+					<button id='button' type='submit'>
+						Submit
+					</button>
+					<button onClick={closeModal}>Close</button>
+				</form>
+			) : null}
 		</div>
 	);
 };

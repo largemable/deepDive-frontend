@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import APIurl from '../config';
 import axios from 'axios';
+import { AiOutlineEdit } from 'react-icons/ai';
 
 export default function Review({ review, id, album, setAlbum }) {
 	const initialState = {
@@ -10,16 +11,21 @@ export default function Review({ review, id, album, setAlbum }) {
 		body: review.body,
 		// reviewer: '',
 	};
-
-	const [modal, setModal] = useState(false);
+	const [controlsModal, setControlsModal] = useState(false);
+	const [editModal, setEditModal] = useState(false);
 	const [newReview, setNewReview] = useState(initialState);
 	// review
-	const editShowPage = () => {
-		setModal(true);
+	const openControls = () => {
+		setControlsModal(true);
 	};
-
-	const closeModal = () => {
-		setModal(false);
+	const closeControlsModal = () => {
+		setControlsModal(false);
+	};
+	const editPost = () => {
+		setEditModal(true);
+	};
+	const closeEditModal = () => {
+		setEditModal(false);
 	};
 	const handleChange = (event) => {
 		setNewReview({ ...newReview, [event.target.name]: event.target.value });
@@ -29,17 +35,17 @@ export default function Review({ review, id, album, setAlbum }) {
 			url: `${APIurl}/reviews/${id}`,
 			method: 'DELETE',
 			headers: {
-				'Authorization': `Bearer ${localStorage.getItem('token')}`
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
 			},
-			data: newReview
-			})
+			data: newReview,
+		})
 			.then(() => {
-				const filteredReviews = album.reviews.filter((review) => review._id != id);  
-				setAlbum({...album, reviews: filteredReviews})
+				const filteredReviews = album.reviews.filter(
+					(review) => review._id != id
+				);
+				setAlbum({ ...album, reviews: filteredReviews });
 			})
 			.catch(console.error);
-
-
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -48,53 +54,59 @@ export default function Review({ review, id, album, setAlbum }) {
 			url: `${APIurl}/reviews/${id}`,
 			method: 'PATCH',
 			headers: {
-				'Authorization': `Bearer ${localStorage.getItem('token')}`
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
 			},
-			data: newReview
-			})
+			data: newReview,
+		})
 			.then(() => {
-				const filteredReviews = album.reviews.filter((review) => review._id != id); 
+				const filteredReviews = album.reviews.filter(
+					(review) => review._id != id
+				);
 				newReview._id = id;
 				filteredReviews.push(newReview);
-				setAlbum({...album, reviews: filteredReviews});
-				closeModal();
+				setAlbum({ ...album, reviews: filteredReviews });
+				closeEditModal();
 			})
 			.catch(console.error);
-
 	};
 
 	return (
 		<div className='review'>
 			<h2>{`${review.title}`}</h2>
 			<p>{`${review.body}`}</p>
-			<div className='controls'>
-				<button onClick={handleDelete}>Delete</button>
-				<button onClick={editShowPage}>Edit</button>
-				{modal ? (
-					<div>
+			<button onClick={openControls}>
+				<AiOutlineEdit />
+			</button>
+			{controlsModal ? (
+				<div className='controls'>
+					<button onClick={handleDelete}>Delete</button>
+					<button onClick={editPost}>Edit</button>
+					{editModal ? (
 						<div>
-							<h2>Edit this Review:</h2>
-							<form onSubmit={handleSubmit}>
-								<label htmlFor='title' />
-								<input
-									onChange={handleChange}
-									name='title'
-									value={newReview.title}
-								/>
-								<label htmlFor='body' />
-								<input
-									onChange={handleChange}
-									name='body'
-									value={newReview.body}
-								/>
-								<br />
-								<button type='submit'>Submit</button>
-							</form>
-							<button onClick={closeModal}>Close</button>
+							<div>
+								<h2>Edit this Review:</h2>
+								<form onSubmit={handleSubmit}>
+									<label htmlFor='title' />
+									<input
+										onChange={handleChange}
+										name='title'
+										value={newReview.title}
+									/>
+									<label htmlFor='body' />
+									<input
+										onChange={handleChange}
+										name='body'
+										value={newReview.body}
+									/>
+									<br />
+									<button type='submit'>Submit</button>
+								</form>
+								<button onClick={closeEditModal}>Close</button>
+							</div>
 						</div>
-					</div>
-				) : null}
-			</div>
+					) : null}
+				</div>
+			) : null}
 		</div>
 	);
 }
