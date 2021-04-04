@@ -68,25 +68,6 @@ const PostReview = ({ match, setAlbum }) => {
 					<button onClick={closeModal}>Close</button>
 				</form>
 			) : null}
-			{/* <form onSubmit={handleSubmit} className='create-form'>
-				<label htmlFor='title'>Title: </label>
-				<input
-					onChange={handleChange}
-					name='title'
-					value={review.title}
-					placeholder='Title'
-				/>
-				<label htmlFor='artist'>Body: </label>
-				<input
-					onChange={handleChange}
-					name='body'
-					value={review.body}
-					placeholder='Body'
-				/>
-				<button id='button' type='submit'>
-					Submit
-				</button>
-			</form> */}
 		</div>
 	);
 };
