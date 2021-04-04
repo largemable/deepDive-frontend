@@ -10,3 +10,4 @@ ReactDOM.render(
 	</Router>,
 	document.getElementById('root')
 );
+//index.js:1 Warning: Invalid DOM property `class`. Did you mean `className`?

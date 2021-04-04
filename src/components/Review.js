@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import APIurl from '../config';
 import axios from 'axios';
@@ -42,6 +42,7 @@ export default function Review({ review, id, album, setAlbum }) {
 			.then(() => {
 				const filteredReviews = album.reviews.filter(
 					(review) => review._id != id
+					//warning for loose equality
 				);
 				setAlbum({ ...album, reviews: filteredReviews });
 			})

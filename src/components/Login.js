@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
 const Login = () => {
-    
-    const initialState = {
-        name: '',
-        password: ''
-    }
+	const initialState = {
+		name: '',
+		password: '',
+	};
 	const history = useHistory();
-    const [loginData, setLoginData] = useState(initialState);
-	const [loginError, setLoginError]  = useState(false);
+	const [loginData, setLoginData] = useState(initialState);
+	const [loginError, setLoginError] = useState(false);
 
 	const handleChange = (event) => {
-		 setLoginData({ ...loginData, [event.target.name]: event.target.value });
+		setLoginData({ ...loginData, [event.target.name]: event.target.value });
 	};
 
 	const handleSubmit = (event) => {
-        event.preventDefault();
+		event.preventDefault();
 		axios
-		.post(`${APIurl}/users/signin`, loginData)
-		.then(({ data }) => {
-			localStorage.setItem('token', data.token);
-			localStorage.setItem('expiration', Date.now() + 360000);   
-			history.push('/');
-		})
-		.catch(() => setLoginError(true));
+			.post(`${APIurl}/users/signin`, loginData)
+			.then(({ data }) => {
+				localStorage.setItem('token', data.token);
+				localStorage.setItem('expiration', Date.now() + 360000);
+				history.push('/');
+			})
+			.catch(() => setLoginError(true));
 	};
 
 	// useEffect(() => {
@@ -54,7 +53,7 @@ const Login = () => {
 				/>
 				<input
 					onChange={handleChange}
-                    type='password'
+					type='password'
 					name='password'
 					value={loginData.password}
 					placeholder='password'
@@ -64,9 +63,8 @@ const Login = () => {
 				</button>
 			</form>
 			{loginError && <p>Username or password not found</p>}
-			<p>No account yet?</p><Link to={'/users'}>Sign Up</Link>
-
-
+			<p>No account yet?</p>
+			<Link to={'/users'}>Sign Up</Link>
 		</div>
 	);
 };

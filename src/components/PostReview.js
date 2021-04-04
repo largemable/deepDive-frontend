@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 
@@ -44,8 +43,6 @@ const PostReview = ({ match, setAlbum }) => {
 	return (
 		<div>
 			<button onClick={postReview}>Review this album</button>
-			{/* <h2>Review this album</h2> */}
-
 			{modal ? (
 				<form onSubmit={handleSubmit} className='create-form'>
 					<label htmlFor='title'>Title: </label>
@@ -55,12 +52,13 @@ const PostReview = ({ match, setAlbum }) => {
 						value={review.title}
 						placeholder='Title'
 					/>
-					<label htmlFor='artist'>Body: </label>
+					<label htmlFor='artist'>Comment: </label>
 					<input
 						onChange={handleChange}
 						name='body'
 						value={review.body}
 						placeholder='Body'
+						id='comment'
 					/>
 					<button id='button' type='submit'>
 						Submit
