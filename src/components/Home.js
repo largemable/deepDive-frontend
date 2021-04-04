@@ -10,7 +10,7 @@ export default function Home() {
             <h1>Music Blog and Rating App</h1>
             <p>Post, review, and rate your favorite albums!</p>
             <Link className='ghost-button' to='/albums'>Get Started</Link>
-            <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+        
         </div>
     )
 }

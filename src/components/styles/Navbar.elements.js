@@ -124,7 +124,7 @@ export const StyledFooter = styled(Nav)`
 	left: 0;
 	top: auto;
 	width: 100%;
-	height: 80px;
+	height: 40px;
 `;
 export const StyledFooterUl = styled.ul`
 	color: white;

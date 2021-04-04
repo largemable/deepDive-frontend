@@ -45,18 +45,18 @@ const Navbar = () => {
 								Home{click ? <TiHomeOutline /> : <TiHome />}
 							</NavLink>
 						</NavItems>
-						<NavItems>
+						{/* <NavItems>
 							<NavLink to='/about' onClick={handleClick} click={click}>
 								About{click ? <TiInfoLarge /> : <TiInfoLargeOutline />}
 							</NavLink>
-						</NavItems>
+						</NavItems> */}
 						<NavItems>
 							<NavLink to='/albums'>
 								Explore <FaSearch />
 							</NavLink>
 						</NavItems>
 						<NavItems>
-							<NavLink to='/albums'>
+							<NavLink to='/post'>
 								Post an album!
 								<FaPlusSquare />
 							</NavLink>
