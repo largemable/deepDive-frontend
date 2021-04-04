@@ -53,12 +53,12 @@ const PostReview = ({ match, setAlbum }) => {
 						placeholder='Title'
 					/>
 					<label htmlFor='artist'>Comment: </label>
-					<input
+					<textarea
 						onChange={handleChange}
 						name='body'
 						value={review.body}
-						placeholder='Body'
-						id='comment'
+						placeholder='Comment'
+						className='comment'
 					/>
 					<button id='button' type='submit'>
 						Submit

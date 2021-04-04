@@ -26,8 +26,8 @@ button {
 	margin: 1rem;
 	padding: 0.5rem 1rem;
 }
-#comment {
-	height: 200px;
+.comment {
+	height: 150px;
 	width: 100%;
 }
 

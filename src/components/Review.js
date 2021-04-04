@@ -95,10 +95,11 @@ export default function Review({ review, id, album, setAlbum }) {
 										value={newReview.title}
 									/>
 									<label htmlFor='body' />
-									<input
+									<textarea
 										onChange={handleChange}
 										name='body'
 										value={newReview.body}
+										className='comment'
 									/>
 									<br />
 									<button type='submit'>Submit</button>
