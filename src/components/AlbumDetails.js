@@ -14,7 +14,7 @@ export default function AlbumDetails({ match }) {
 			.then((res) => res.json())
 			.then((res) => setAlbum(res))
 			.catch(console.error);
-	}, []);   
+	}, []);
 
 	if (!album) {
 		return <Loading />;
@@ -23,10 +23,12 @@ export default function AlbumDetails({ match }) {
 	return (
 		<div className='center'>
 			<img src={album.artwork} alt={album.title} />
-			<h1>{album.title}</h1>
-			<h2>{album.artist}</h2>
-			<h3>{album.genre}</h3>
-			<h3>{album.year}</h3>
+			<div className='album-info'>
+				<h1>{album.title}</h1>
+				<h2>{album.artist}</h2>
+				<h3>{album.genre}</h3>
+				<h3>{album.year}</h3>
+			</div>
 
 			<div>
 				<Route
@@ -40,7 +42,7 @@ export default function AlbumDetails({ match }) {
 						/>
 					)}
 				/>
-				<Reviews album={album} setAlbum={setAlbum}/>
+				<Reviews album={album} setAlbum={setAlbum} />
 			</div>
 		</div>
 	);

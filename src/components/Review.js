@@ -81,6 +81,7 @@ export default function Review({ review, id, album, setAlbum }) {
 				<div className='controls'>
 					<button onClick={handleDelete}>Delete</button>
 					<button onClick={editPost}>Edit</button>
+					<button onClick={closeControlsModal}>Close</button>
 					{editModal ? (
 						<div>
 							<div>
