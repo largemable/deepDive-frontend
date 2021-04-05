@@ -21,7 +21,6 @@ function Users({ users, setUsers }) {
 		<div className='center'>
 			<h1>Create New Account</h1>
 			<AddUser />
-			<h2>All Users</h2>
 			{users.map((user) => {
 				return <User user={user} key={user._id} />;
 			})}
