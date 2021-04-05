@@ -15,8 +15,8 @@ Users can make accounts, post albums and write album reviews. Users can also vie
 
 ### Authors
 
-Stephane stephane.karim.sk@gmail.com
-Jordan mrjordantanner@gmail.com
-Ford fordpickert@gmail.com
-Mable mable.palombo@gmail.com
+- Stephane stephane.karim.sk@gmail.com
+- Jordan mrjordantanner@gmail.com
+- Ford fordpickert@gmail.com
+- Mable mable.palombo@gmail.com
 
