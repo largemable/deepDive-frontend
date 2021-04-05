@@ -31,7 +31,6 @@ button {
  }
 
   .center {
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -253,6 +252,23 @@ a:hover {
 	padding: 1.25rem;
 	color: #888888;
 
+}
+
+
+.home-title {
+	font-size: 10rem;
+	font-weight: 400;
+}
+
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-top: 10vh;
+	width: 100%;
+	margin: 2rem;
+	padding: 2rem;
 }
 
 /* Loading spinner from https://loading.io/css/*/

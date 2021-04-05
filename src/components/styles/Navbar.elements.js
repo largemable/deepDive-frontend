@@ -23,7 +23,6 @@ export const NavbarContainer = styled(Container)`
 	justify-content: space-between;
 	height: 80px;
 	color: white;
-
 	${Container}
 `;
 
@@ -35,10 +34,11 @@ export const NavLogo = styled(Link)`
 	font-size: 2rem;
 	display: flex;
 	align-items: center;
+	
 `;
 
 export const NavIcon = styled(ImHeadphones)`
-	margin-right: 0.5;
+	margin: 0.75rem;
 	display: flex;
 	justify-self: flex-start;
 `;
@@ -102,7 +102,7 @@ export const NavLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 2rem;
 	height: 100%;
 
 	@media screen and (max-width: 960px) {

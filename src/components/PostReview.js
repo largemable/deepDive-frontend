@@ -40,14 +40,12 @@ const PostReview = ({ match, setAlbum }) => {
 			<button onClick={postReview}>Review this album</button>
 			{modal ? (
 				<form onSubmit={handleSubmit} className='create-form'>
-					{/* <label htmlFor='title'>Title: </label> */}
 					<input
 						onChange={handleChange}
 						name='title'
 						value={review.title}
 						placeholder='Title'
 					/>
-					{/* <label htmlFor='artist'>Comment: </label> */}
 					<textarea
 						onChange={handleChange}
 						name='body'

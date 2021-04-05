@@ -16,6 +16,8 @@ body {
 	height: 100vh;
 	margin-left: 5px;
 	background-image: url(${Space});
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 `;
