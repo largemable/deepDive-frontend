@@ -3,6 +3,11 @@ import '../App.css';
 import APIurl from '../config';
 import axios from 'axios';
 import { AiOutlineEdit } from 'react-icons/ai';
+import SignUpBtn from './styles/Login.elements'
+ 
+
+
+
 export default function Review({ review, id, album, setAlbum }) {
 	const initialState = {
 		albumId: id,
@@ -72,14 +77,14 @@ export default function Review({ review, id, album, setAlbum }) {
 		<div className='review'>
 			<h2>{`${review.title}`}</h2>
 			<p>{`${review.body}`}</p>
-			<button onClick={openControls}>
+			<SignUpBtn onClick={openControls}>
 				<AiOutlineEdit />
-			</button>
+			</SignUpBtn>
 			{controlsModal ? (
 				<div className='controls'>
-					<button onClick={handleDelete}>Delete</button>
-					<button onClick={editPost}>Edit</button>
-					<button onClick={closeControlsModal}>Close</button>
+					<SignUpBtn onClick={handleDelete}>Delete</SignUpBtn>
+					<SignUpBtn onClick={editPost}>Edit</SignUpBtn>
+					<SignUpBtn onClick={closeControlsModal}>Close</SignUpBtn>
 					{editModal ? (
 						<div>
 							<div>
@@ -99,9 +104,9 @@ export default function Review({ review, id, album, setAlbum }) {
 										className='comment'
 									/>
 									<br />
-									<button type='submit'>Submit</button>
+									<SignUpBtn type='submit'>Submit</SignUpBtn>
 								</form>
-								<button onClick={closeEditModal}>Close</button>
+								<SignUpBtn onClick={closeEditModal}>Close</SignUpBtn>
 							</div>
 						</div>
 					) : null}
