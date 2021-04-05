@@ -3,7 +3,6 @@ import '../App.css';
 import APIurl from '../config';
 import axios from 'axios';
 import { AiOutlineEdit } from 'react-icons/ai';
-
 export default function Review({ review, id, album, setAlbum }) {
 	const initialState = {
 		albumId: id,
@@ -50,7 +49,6 @@ export default function Review({ review, id, album, setAlbum }) {
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-
 		axios({
 			url: `${APIurl}/reviews/${id}`,
 			method: 'PATCH',
@@ -70,7 +68,6 @@ export default function Review({ review, id, album, setAlbum }) {
 			})
 			.catch(console.error);
 	};
-
 	return (
 		<div className='review'>
 			<h2>{`${review.title}`}</h2>
