@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 import { IconContext } from 'react-icons/lib';
@@ -15,8 +14,15 @@ const PostReview = ({ match, setAlbum }) => {
 		body: '',
 		// reviewer: '',
 	};
-
+	const [modal, setModal] = useState(false);
 	const [review, setReview] = useState(initialState);
+
+	const postReview = () => {
+		setModal(true);
+	};
+	const closeModal = () => {
+		setModal(false);
+	};
 
 	const handleChange = (event) => {
 		setReview({ ...review, [event.target.name]: event.target.value });
@@ -28,12 +34,13 @@ const PostReview = ({ match, setAlbum }) => {
 			url: `${APIurl}/reviews`,
 			method: 'POST',
 			headers: {
-			  'Authorization': `Bearer ${localStorage.getItem('token')}`
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
 			},
-			data: review
-		  })
+			data: review,
+		})
 			.then(({ data }) => {
 				setAlbum(data.album);
+				closeModal();
 			})
 			.catch(console.error);
 	};
@@ -59,6 +66,7 @@ const PostReview = ({ match, setAlbum }) => {
 					Submit
 				</button>
 			</form>
+
 		</div>
 	);
 };

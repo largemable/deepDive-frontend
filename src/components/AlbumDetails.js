@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import APIurl from '../config';
 import Reviews from './Reviews';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import PostReview from './PostReview';
 
 export default function AlbumDetails({ match }) {
@@ -16,6 +16,7 @@ export default function AlbumDetails({ match }) {
 			.then((res) => setAlbum(res))
 			.catch(console.error);
 	}, []);
+
 
 	if (!album) {
 		return <Loading />;

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import Loading from './Loading';
 import APIurl from '../config';
 import AddUser from './AddUser';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
@@ -13,15 +13,15 @@ const Login = ( { activeUser, setActiveUser } ) => {
         password: ''
     }
 	const history = useHistory();
-    const [loginData, setLoginData] = useState(initialState);
-	const [loginError, setLoginError]  = useState(false);
+	const [loginData, setLoginData] = useState(initialState);
+	const [loginError, setLoginError] = useState(false);
 
 	const handleChange = (event) => {
-		 setLoginData({ ...loginData, [event.target.name]: event.target.value });
+		setLoginData({ ...loginData, [event.target.name]: event.target.value });
 	};
 
 	const handleSubmit = (event) => {
-        event.preventDefault();
+		event.preventDefault();
 		axios
 		.post(`${APIurl}/users/signin`, loginData)
 		.then(({ data }) => {
@@ -59,7 +59,7 @@ const Login = ( { activeUser, setActiveUser } ) => {
 				/>
 				<input
 					onChange={handleChange}
-                    type='password'
+					type='password'
 					name='password'
 					value={loginData.password}
 					placeholder='password'

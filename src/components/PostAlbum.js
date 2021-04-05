@@ -27,10 +27,10 @@ const PostAlbum = () => {
 			url: `${APIurl}/albums`,
 			method: 'POST',
 			headers: {
-			  'Authorization': `Bearer ${localStorage.getItem('token')}`
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
 			},
-			data: album
-		  })
+			data: album,
+		})
 			.then(() => {
 				history.push('/');
 			})
@@ -60,7 +60,7 @@ const PostAlbum = () => {
 					onChange={handleChange}
 					name='artwork'
 					value={album.artwork}
-					placeholder='Artwork'
+					placeholder='Url for .jpg image'
 				/>
 				<label htmlFor='genre'>Genre: </label>
 				<input

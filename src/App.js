@@ -24,7 +24,6 @@ import {
 } from './components/styles/Navbar.elements';
 
 function App() {
-
 	const [users, setUsers] = useState([]);
 	const [activeUser, setActiveUser] = useState(null);  
 
