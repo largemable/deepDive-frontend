@@ -24,13 +24,13 @@ button {
 	display: block;
 	margin: 1rem;
 	padding: 0.5rem 1rem;
-  }
+}
 
- h1 {
-	 color:rgb(70, 89, 124);
- }
+h1 {
+	color: rgb(70, 89, 124);
+}
 
-  .center {
+.center {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -88,20 +88,20 @@ a:hover {
 	height: 50px;
 }
 
-  .card {
-    display: flex;
-    height: 40vh;
-    max-height: 350px; 
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    /* background: #111111; */
-    user-select: none;
-    border: #444444 1px solid;
-    opacity: 1;
-    transition: opacity 0.15s, border 0.15s;
-
+.card {
+	display: flex;
+	height: 40vh;
+	max-height: 350px;
+	min-height: 350px;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	/* background: #111111; */
+	user-select: none;
+	border: #444444 1px solid;
+	opacity: 1;
+	transition: opacity 0.15s, border 0.15s;
 }
 
 .card-image-container {
@@ -142,12 +142,11 @@ a:hover {
 }
 
 .albums-container {
-    margin-top:1.5rem;
-    width:80%;
-    height:100%;
-    display: grid;
-    grid-template-columns: 
-	repeat(auto-fill, minmax(150px, 1fr));
+	margin-top: 1.5rem;
+	width: 80%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	align-items: center;
 }
 
@@ -170,6 +169,7 @@ a:hover {
 	font-size: 0.8rem;
 	border: chartreuse 1px solid;
 	background: transparent;
+	margin: 20px;
 }
 
 .ghost-button:hover {
@@ -180,7 +180,7 @@ a:hover {
 }
 
 .album-details-image {
-	width: 50vw;
+	width: 30vw;
 }
 
 .album-title {
@@ -198,20 +198,19 @@ a:hover {
 }
 
 .card-album-title {
-	font-size:1.25rem;
+	font-size: 1.25rem;
 	font-weight: 500;
 	margin: 0.5rem;
 }
 
-
 .card-album-artist {
-	font-size:0.8rem;
+	font-size: 0.8rem;
 	font-weight: 300;
 	margin: 0.5rem;
 }
 
 .card-album-year {
-	font-size:0.8rem;
+	font-size: 0.8rem;
 	font-weight: 100;
 }
 
@@ -224,8 +223,6 @@ a:hover {
 	background: #476e8c;
 	width: 50vw;
 }
-
-
 
 .review {
 	display: flex;
@@ -240,7 +237,6 @@ a:hover {
 .review-header {
 	text-align: left;
 	font-weight: 600;
-
 }
 
 .review-body-input {
@@ -251,9 +247,7 @@ a:hover {
 	word-wrap: normal;
 	padding: 1.25rem;
 	color: #888888;
-
 }
-
 
 .home-title {
 	font-size: 10rem;
