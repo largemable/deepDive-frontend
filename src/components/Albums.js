@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import APIurl from '../config'
-import '../App.css';
-import Card from './Card'
+import APIurl from '../config';
+import Card from './Card';
+import Loading from './Loading';
 
 const Albums = () => {
 
@@ -13,6 +13,10 @@ const Albums = () => {
         .then((res) => setAlbums(res))
         .catch(console.error);
     }, [])
+
+    if (!albums) {
+        return <Loading />
+    }
 
     return (
         <div className='albums-wrapper'>

@@ -11,7 +11,7 @@ function Users({ users, setUsers }) {
 			.get(`${APIurl}/users`)
 			.then((res) => setUsers(res.data))
 			.catch(console.error);
-	}, []); //missing dependency warning
+	}, []);
 
 	if (!users) {
 		return <Loading />;
@@ -19,7 +19,7 @@ function Users({ users, setUsers }) {
 
 	return (
 		<div className='center'>
-			<h1>Sign Up</h1>
+			<h1>Create New Account</h1>
 			<AddUser />
 			<h2>All Users</h2>
 			{users.map((user) => {

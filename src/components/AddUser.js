@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
+import { IconContext } from 'react-icons/lib';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const AddUser = () => {
 	const initialState = {
@@ -43,7 +45,7 @@ const AddUser = () => {
 					placeholder='password'
 				/>
 				<button className='button' id='button' type='submit'>
-					Add User
+					Sign Up <IoIosAddCircleOutline />
 				</button>
 			</form>
 			{signUpError && <p>Username already exists</p>}

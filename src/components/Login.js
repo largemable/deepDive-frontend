@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
+import LoginComponent from './styles/LoginComponent'
+import { IoIosLogIn } from 'react-icons/io';
+import {LogInBtn, StyledFormSection} from './styles/Login.elements'
 
-const Login = () => {
-	const initialState = {
-		name: '',
-		password: '',
-	};
+const Login = ( { activeUser, setActiveUser } ) => {
+    
+    const initialState = {
+        name: '',
+        password: ''
+    }
 	const history = useHistory();
 	const [loginData, setLoginData] = useState(initialState);
 	const [loginError, setLoginError] = useState(false);
@@ -19,13 +23,15 @@ const Login = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		axios
-			.post(`${APIurl}/users/signin`, loginData)
-			.then(({ data }) => {
-				localStorage.setItem('token', data.token);
-				localStorage.setItem('expiration', Date.now() + 360000);
-				history.push('/');
-			})
-			.catch(() => setLoginError(true));
+		.post(`${APIurl}/users/signin`, loginData)
+		.then(({ data }) => {
+			localStorage.setItem('token', data.token);
+			localStorage.setItem('expiration', Date.now() + 360000);   
+			setActiveUser(loginData.name);
+			console.log(activeUser);
+			history.push('/');
+		})
+		.catch(() => setLoginError(true));
 	};
 
 	// useEffect(() => {
@@ -63,8 +69,7 @@ const Login = () => {
 				</button>
 			</form>
 			{loginError && <p>Username or password not found</p>}
-			<p>No account yet?</p>
-			<Link to={'/users'}>Sign Up</Link>
+			<p>No account yet?</p><Link to={'/users'}>Sign Up</Link>
 		</div>
 	);
 };

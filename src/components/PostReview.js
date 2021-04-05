@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import APIurl from '../config';
+import { IconContext } from 'react-icons/lib';
+import {IoIosCheckmarkCircleOutline} from "react-icons/io";
+
+
 
 const PostReview = ({ match, setAlbum }) => {
+	
 	const initialState = {
 		albumId: match.params.id,
 		title: '',
@@ -41,31 +46,27 @@ const PostReview = ({ match, setAlbum }) => {
 	};
 
 	return (
-		<div>
-			<button onClick={postReview}>Review this album</button>
-			{modal ? (
-				<form onSubmit={handleSubmit} className='create-form'>
-					<label htmlFor='title'>Title: </label>
-					<input
-						onChange={handleChange}
-						name='title'
-						value={review.title}
-						placeholder='Title'
-					/>
-					<label htmlFor='artist'>Comment: </label>
-					<textarea
-						onChange={handleChange}
-						name='body'
-						value={review.body}
-						placeholder='Comment'
-						className='comment'
-					/>
-					<button id='button' type='submit'>
-						Submit
-					</button>
-					<button onClick={closeModal}>Close</button>
-				</form>
-			) : null}
+		<div className='post-review'>
+			<div className='review-header'>Review this album</div>
+			<form onSubmit={handleSubmit} className='create-form'>
+				<input
+					onChange={handleChange}
+					name='title'
+					value={review.title}
+					placeholder='Title'
+				/>
+				<textarea
+					onChange={handleChange}
+					name='body'
+					value={review.body}
+					placeholder='Body'
+					className='review-body-input'
+				/>
+				<button id='button' type='submit'>
+					Submit
+				</button>
+			</form>
+
 		</div>
 	);
 };
