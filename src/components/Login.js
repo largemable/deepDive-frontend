@@ -6,9 +6,7 @@ import LoginComponent from './styles/LoginComponent'
 import { IoIosLogIn } from 'react-icons/io';
 import {LogInBtn, StyledFormSection} from './styles/Login.elements'
 
-
-
-const Login = () => {
+const Login = ( { activeUser, setActiveUser } ) => {
     
     const initialState = {
         name: '',
@@ -29,6 +27,8 @@ const Login = () => {
 		.then(({ data }) => {
 			localStorage.setItem('token', data.token);
 			localStorage.setItem('expiration', Date.now() + 360000);   
+			setActiveUser(loginData.name);
+			console.log(activeUser);
 			history.push('/');
 		})
 		.catch(() => setLoginError(true));
@@ -70,8 +70,6 @@ const Login = () => {
 			</form>
 			{loginError && <p>Username or password not found</p>}
 			<p>No account yet?</p><Link to={'/users'}>Sign Up</Link>
-
-
 		</div>
 	);
 };

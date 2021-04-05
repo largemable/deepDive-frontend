@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Container} from '../../GlobalStyle';
-// import Background from './bckgroundImg/Grade-Grey.jpg';
+
 
 
 export const Btn = styled.button`

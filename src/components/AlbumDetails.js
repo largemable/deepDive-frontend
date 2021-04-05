@@ -1,4 +1,5 @@
 import '../App.css';
+
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import APIurl from '../config';
@@ -14,7 +15,7 @@ export default function AlbumDetails({ match }) {
 			.then((res) => res.json())
 			.then((res) => setAlbum(res))
 			.catch(console.error);
-	}, []);   
+	}, []);
 
 	if (!album) {
 		return <Loading />;
@@ -22,11 +23,12 @@ export default function AlbumDetails({ match }) {
 
 	return (
 		<div className='center'>
-			<img src={album.artwork} alt={album.title} />
-			<h1>{album.title}</h1>
-			<h2>{album.artist}</h2>
-			<h3>{album.genre}</h3>
-			<h3>{album.year}</h3>
+			<img className='album-details-image' src={album.artwork} alt={album.title} />
+
+			<div className='album-title'>{album.title}</div>
+			<div className='album-artist'>{album.artist}</div>
+			<div className='album-genre'>{album.genre}</div>
+			<div className='album-year'>{album.year}</div>
 
 			<div>
 				<Route
@@ -40,7 +42,7 @@ export default function AlbumDetails({ match }) {
 						/>
 					)}
 				/>
-				<Reviews album={album} setAlbum={setAlbum}/>
+				<Reviews album={album} setAlbum={setAlbum} />
 			</div>
 		</div>
 	);

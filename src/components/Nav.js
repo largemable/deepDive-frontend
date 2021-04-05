@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './styles/Navbar';
 
-function Nav() {
+function Nav( { activeUser, setActiveUser } ) {
 	return (
 		<>
-		<Navbar />
+		<Navbar activeUser={activeUser} setActiveUser={setActiveUser}/>
 		</>
 	);
 }

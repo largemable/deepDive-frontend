@@ -39,22 +39,21 @@ const PostReview = ({ match, setAlbum }) => {
 	};
 
 	return (
-		<div>
-			<h2>Review this album</h2>
+		<div className='post-review'>
+			<div className='review-header'>Review this album</div>
 			<form onSubmit={handleSubmit} className='create-form'>
-				<label htmlFor='title'>Title: </label>
 				<input
 					onChange={handleChange}
 					name='title'
 					value={review.title}
 					placeholder='Title'
 				/>
-				<label htmlFor='artist'>Body: </label>
-				<input
+				<textarea
 					onChange={handleChange}
 					name='body'
 					value={review.body}
 					placeholder='Body'
+					className='review-body-input'
 				/>
 				<button id='button' type='submit'>
 					Submit

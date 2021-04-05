@@ -22,17 +22,26 @@ import {
 } from './Navbar.elements';
 import { TiThMenuOutline, TiThMenu } from 'react-icons/ti';
 
-const Navbar = () => {
+const Navbar = ( { activeUser, setActiveUser } ) => {
+
 	const [click, setClick] = useState(false);
+
 	const handleClick = () => {
 		setClick(!click);
 	};
+
+	const handleLogout = () => {
+		localStorage.clear();
+		setActiveUser(null);
+	}
+
+
 	return (
 		<>
 			<IconContext.Provider value={{ color: 'white' }}>
 				<Nav>
 					<NavLogo to='/'>
-						<NavIcon /> Music Review
+						<NavIcon /> deepDive
 						<NavbarContainer></NavbarContainer>
 					</NavLogo>
 					<NavBarMenu onClick={handleClick}>
@@ -40,33 +49,36 @@ const Navbar = () => {
 					</NavBarMenu>
 
 					<NavMenu onClick={handleClick} click={click}>
-						<NavItems>
-							<NavLink to='/' onClick={handleClick} click={click}>
-								Home{click ? <TiHomeOutline /> : <TiHome />}
-							</NavLink>
-						</NavItems>
 						{/* <NavItems>
-							<NavLink to='/about' onClick={handleClick} click={click}>
-								About{click ? <TiInfoLarge /> : <TiInfoLargeOutline />}
+							<NavLink to='/' onClick={handleClick} click={click}>
+								{click ? <TiHomeOutline /> : <TiHome />} Home
 							</NavLink>
 						</NavItems> */}
 						<NavItems>
 							<NavLink to='/albums'>
-								Explore <FaSearch />
+							<FaSearch /> Explore 
 							</NavLink>
 						</NavItems>
 						<NavItems>
 							<NavLink to='/post'>
-								Post an album!
-								<FaPlusSquare />
+								<FaPlusSquare /> Post an album!
 							</NavLink>
 						</NavItems>
 
-						<NavItems>
-							<NavLink to='/signin' onClick={handleClick} click={click}>
-								Sign In{click ? <TiUser /> : <TiUserOutline />}
-							</NavLink>
-						</NavItems>
+							<NavItems>
+								<NavLink to='/signin' onClick={handleClick} click={click}>
+									{click ? <TiUser /> : <TiUserOutline />} Sign In
+								</NavLink>
+							</NavItems>
+
+							<NavItems>
+								<NavLink to='/signin' onClick={handleLogout} click={click}>
+									Log out
+								</NavLink>
+							</NavItems>
+						
+
+
 					</NavMenu>
 				</Nav>
 			</IconContext.Provider>

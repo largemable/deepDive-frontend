@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import './App.css';
+import './App.css';
+
+
 import Albums from './components/Albums';
 import AlbumDetails from './components/AlbumDetails';
 import Home from './components/Home';
@@ -22,13 +24,14 @@ import {
 } from './components/styles/Navbar.elements';
 
 function App() {
+
 	const [users, setUsers] = useState([]);
-	const [activeUser, setActiveUser] = useState(null);
+	const [activeUser, setActiveUser] = useState(null);  
 
 	return (
 		<div>
 			<GlobalStyle />
-			<Nav />
+			<Nav activeUser={activeUser} setActiveUser={setActiveUser}/>
 			<main style={{ marginBottom: '-80px', minHeight: '100%' }}>
 				<Switch>
 					<Route exact path='/' render={() => <Home />} />

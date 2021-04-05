@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
 	text-align: center;
-	height: 100%;
+	height: 100vh;
 	margin-left: 5px;
 	background-image: url(${Space});
 }
