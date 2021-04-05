@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import APIurl from '../config';
+import { SignUpBtn, ReviewBtn } from './styles/Login.elements';
+
 const PostReview = ({ match, setAlbum }) => {
 	const initialState = {
 		albumId: match.params.id,
@@ -37,7 +39,7 @@ const PostReview = ({ match, setAlbum }) => {
 	};
 	return (
 		<div className='post-review'>
-			<button onClick={postReview}>Review this album</button>
+			<ReviewBtn onClick={postReview}>Review this album</ReviewBtn>
 			{modal ? (
 				<form onSubmit={handleSubmit} className='create-form'>
 					<input
@@ -53,10 +55,10 @@ const PostReview = ({ match, setAlbum }) => {
 						placeholder='Comment'
 						className='review-body-input'
 					/>
-					<button id='button' type='submit'>
+					<SignUpBtn id='SignUpBtn' type='submit'>
 						Submit
-					</button>
-					<button onClick={closeModal}>Close</button>
+					</SignUpBtn>
+					<SignUpBtn onClick={closeModal}>Close</SignUpBtn>
 				</form>
 			) : null}
 		</div>

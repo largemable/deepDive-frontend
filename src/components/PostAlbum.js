@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 import { IconContext } from 'react-icons/lib';
+import { SignUpBtn } from './styles/Login.elements';
+
 
 
 const PostAlbum = () => {
@@ -76,9 +78,9 @@ const PostAlbum = () => {
 					value={album.year}
 					placeholder='Year'
 				/>
-				<button id='button' type='submit'>
+				<SignUpBtn id='button' type='submit'>
 					Submit
-				</button>
+				</SignUpBtn>
 			</form>
 		</div>
 	);

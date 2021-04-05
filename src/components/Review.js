@@ -3,7 +3,7 @@ import '../App.css';
 import APIurl from '../config';
 import axios from 'axios';
 import { AiOutlineEdit } from 'react-icons/ai';
-import SignUpBtn from './styles/Login.elements'
+import {SignUpBtn, ReviewBtn, StyledFormSection } from './styles/Login.elements'
  
 
 
@@ -77,9 +77,9 @@ export default function Review({ review, id, album, setAlbum }) {
 		<div className='review'>
 			<h2>{`${review.title}`}</h2>
 			<p>{`${review.body}`}</p>
-			<SignUpBtn onClick={openControls}>
+			<ReviewBtn onClick={openControls}>
 				<AiOutlineEdit />
-			</SignUpBtn>
+			</ReviewBtn>
 			{controlsModal ? (
 				<div className='controls'>
 					<SignUpBtn onClick={handleDelete}>Delete</SignUpBtn>
@@ -89,7 +89,7 @@ export default function Review({ review, id, album, setAlbum }) {
 						<div>
 							<div>
 								<h2>Edit this Review:</h2>
-								<form onSubmit={handleSubmit}>
+								<StyledFormSection onSubmit={handleSubmit}>
 									<label htmlFor='title' />
 									<input
 										onChange={handleChange}
@@ -105,7 +105,7 @@ export default function Review({ review, id, album, setAlbum }) {
 									/>
 									<br />
 									<SignUpBtn type='submit'>Submit</SignUpBtn>
-								</form>
+								</StyledFormSection>
 								<SignUpBtn onClick={closeEditModal}>Close</SignUpBtn>
 							</div>
 						</div>

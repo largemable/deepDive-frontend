@@ -4,7 +4,7 @@ import axios from 'axios';
 import APIurl from '../config';
 import LoginComponent from './styles/LoginComponent'
 import { IoIosLogIn } from 'react-icons/io';
-import {LogInBtn, StyledFormSection} from './styles/Login.elements'
+import {LogInBtn, StyledFormSection, SignUpBtn} from './styles/Login.elements'
 
 const Login = ( { activeUser, setActiveUser } ) => {
     
@@ -50,7 +50,7 @@ const Login = ( { activeUser, setActiveUser } ) => {
 	return (
 		<div className='center'>
 			<h1>Sign In</h1>
-			<form onSubmit={handleSubmit} className='login-form'>
+			<StyledFormSection onSubmit={handleSubmit} className='login-form'>
 				<input
 					onChange={handleChange}
 					name='name'
@@ -64,12 +64,15 @@ const Login = ( { activeUser, setActiveUser } ) => {
 					value={loginData.password}
 					placeholder='password'
 				/>
-				<button className='' id='button' type='submit'>
+				<LogInBtn className='' id='button' type='submit'>
 					Sign In
-				</button>
-			</form>
+				</LogInBtn>
+			</StyledFormSection>
 			{loginError && <p>Username or password not found</p>}
-			<p>No account yet?</p><Link to={'/users'}>Sign Up</Link>
+			<p>No account yet?</p>
+			<Link to={'/users'}>
+				<SignUpBtn>Sign Up</SignUpBtn>
+			</Link>
 		</div>
 	);
 };

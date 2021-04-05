@@ -34,7 +34,6 @@ export const NavLogo = styled(Link)`
 	font-size: 2rem;
 	display: flex;
 	align-items: center;
-	
 `;
 
 export const NavIcon = styled(ImHeadphones)`
@@ -124,7 +123,7 @@ export const StyledFooter = styled(Nav)`
 	left: 0;
 	top: auto;
 	width: 100%;
-	height: 40px;
+	height: 60px;
 `;
 export const StyledFooterUl = styled.ul`
 	color: white;
